@@ -1,0 +1,205 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/XBoxLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#333342"
+    tools:context="io.github.Knight_of_night.virtualjoypad.XBoxActivity" >
+
+    <!--
+         The primary full-screen view. This can be replaced with whatever view
+         is needed to present your content, e.g. VideoView, SurfaceView,
+         TextureView, etc.
+    -->
+
+    <!--
+         This FrameLayout insets its children based on system windows using
+         android:fitsSystemWindows.
+    -->
+
+    <TextView
+        android:id="@+id/textViewDebug"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/default_padding" >
+
+        <Button
+            android:id="@+id/buttonLeft"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:text="@string/xbox_left_button" />
+
+        <Button
+            android:id="@+id/buttonRight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:text="@string/xbox_right_button" />
+
+        <SeekBar
+            android:id="@+id/leftTrigger"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/buttonLeft"
+            android:layout_toRightOf="@+id/buttonLeft"
+            android:max="@integer/max_trigger_value"
+            android:minWidth="@dimen/trigger_width" />
+
+        <SeekBar
+            android:id="@+id/rightTrigger"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/buttonRight"
+            android:layout_toLeftOf="@+id/buttonRight"
+            android:max="@integer/max_trigger_value"
+            android:minWidth="@dimen/trigger_width" />
+
+        <Button
+            android:id="@+id/buttonGuide"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="@string/xbox_guide" />
+
+        <Button
+            android:id="@+id/buttonLeftThumb"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:text="@string/xbox_left_thumb" />
+
+        <Button
+            android:id="@+id/buttonRightThumb"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:text="@string/xbox_right_thumb" />
+
+        <Button
+            android:id="@+id/buttonBack"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/buttonGuide"
+            android:layout_toLeftOf="@+id/buttonGuide"
+            android:text="@string/xbox_back" />
+
+        <Button
+            android:id="@+id/buttonStart"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/buttonGuide"
+            android:layout_toRightOf="@+id/buttonGuide"
+            android:text="@string/xbox_start" />
+
+    </RelativeLayout>
+    
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <GridLayout
+            android:id="@+id/GridLayoutLeft"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:columnCount="2"
+            android:rowCount="2" >
+
+            <Button
+                android:id="@+id/buttonDpadLeft"
+                android:layout_column="0"
+                android:layout_gravity="top|start"
+                android:layout_row="0"
+                android:minHeight="@dimen/button_size"
+                android:minWidth="@dimen/button_size"
+                android:text="@string/xbox_dpad_left" />
+
+            <Button
+                android:id="@+id/buttonDpadUp"
+                android:layout_column="1"
+                android:layout_gravity="top|start"
+                android:layout_row="0"
+                android:minHeight="@dimen/button_size"
+                android:minWidth="@dimen/button_size"
+                android:text="@string/xbox_dpad_up" />
+
+            <Button
+                android:id="@+id/buttonDpadDown"
+                android:layout_column="0"
+                android:layout_gravity="top|start"
+                android:layout_row="1"
+                android:minHeight="@dimen/button_size"
+                android:minWidth="@dimen/button_size"
+                android:text="@string/xbox_dpad_down" />
+
+            <Button
+                android:id="@+id/buttonDpadRight"
+                android:layout_column="1"
+                android:layout_gravity="top|start"
+                android:layout_row="1"
+                android:minHeight="@dimen/button_size"
+                android:minWidth="@dimen/button_size"
+                android:text="@string/xbox_dpad_right" />
+        </GridLayout>
+        
+        <GridLayout
+            android:id="@+id/GridLayoutRight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:columnCount="2"
+            android:rowCount="2" >
+
+            <Button
+                android:id="@+id/buttonY"
+                android:layout_column="0"
+                android:layout_gravity="top|start"
+                android:layout_row="0"
+                android:minHeight="@dimen/button_size"
+                android:minWidth="@dimen/button_size"
+                android:text="@string/xbox_button_y" />
+
+            <Button
+                android:id="@+id/buttonB"
+                android:layout_column="1"
+                android:layout_gravity="top|start"
+                android:layout_row="0"
+                android:minHeight="@dimen/button_size"
+                android:minWidth="@dimen/button_size"
+                android:text="@string/xbox_button_b" />
+
+            <Button
+                android:id="@+id/buttonX"
+                android:layout_column="0"
+                android:layout_gravity="top|start"
+                android:layout_row="1"
+                android:minHeight="@dimen/button_size"
+                android:minWidth="@dimen/button_size"
+                android:text="@string/xbox_button_x" />
+
+            <Button
+                android:id="@+id/buttonA"
+                android:layout_column="1"
+                android:layout_gravity="top|start"
+                android:layout_row="1"
+                android:minHeight="@dimen/button_size"
+                android:minWidth="@dimen/button_size"
+                android:text="@string/xbox_button_a" />
+        </GridLayout>
+
+    </RelativeLayout>
+
+</FrameLayout>
